@@ -4,7 +4,7 @@
 
         <div class="grid grid-cols-12 gap-4">
             <FlightCard
-                v-for="(flight, i) in flights"
+                v-for="(flight, i) in flightsData"
                 :key="i"
                 :flight="flight"
                 class="col-span-6"
