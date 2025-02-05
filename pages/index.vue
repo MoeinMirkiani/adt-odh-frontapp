@@ -44,28 +44,28 @@ const flights: {}[] = [
 ]
 
 const route = useRoute()
-// const flightsData = ref<{ airline: string }[]>([])
-//
-// const fetchFlights = async (queryParams: any) => {
-//     const { data, error } = await useFetch('http://localhost:8080/flight', {
-//         params: queryParams
-//     })
-//
-//     if (error.value) {
-//         console.error('Error fetching flights:', error.value)
-//     } else {
-//         // flightsData.value = data.value
-//         console.log(data.value)
-//     }
-// }
-//
-// watch(
-//     () => route.query,
-//     (newQuery) => {
-//         fetchFlights(newQuery)
-//     },
-//     { immediate: true }
-// )
-//
-// await fetchFlights(route.query)
+const flightsData = ref<{ [key: string]: string | null }[]>([])
+
+const fetchFlights = async (queryParams: any) => {
+    const { data, error } = await useFetch('http://localhost:8080/flight', {
+        params: queryParams
+    })
+
+    if (error.value) {
+        console.error('Error fetching flights:', error.value)
+    } else {
+        // flightsData.value = data.value
+        console.log(data.value)
+    }
+}
+
+watch(
+    () => route.query,
+    (newQuery) => {
+        fetchFlights(newQuery)
+    },
+    { immediate: true }
+)
+
+await fetchFlights(route.query)
 </script>
