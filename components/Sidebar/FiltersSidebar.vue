@@ -7,7 +7,7 @@
                 v-model="flightType"
                 :options="flightTypes"
                 label="Flight Type"
-                query-name="flight"
+                query-name="type"
                 default-value="all"
             />
 

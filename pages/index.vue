@@ -2,11 +2,12 @@
     <div class="container mx-auto p-6 border border-gray-200 rounded-lg">
         <h1 class="mb-6 text-2xl">Flights List</h1>
 
-        <div class="space-y-4">
+        <div class="grid grid-cols-12 gap-4">
             <FlightCard
-                v-for="(flight, i) in flights"
+                v-for="(flight, i) in flightsData"
                 :key="i"
-                :airline="flight.airline"
+                :flight="flight"
+                class="col-span-6"
             />
         </div>
     </div>
