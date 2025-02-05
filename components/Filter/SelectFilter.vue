@@ -6,6 +6,8 @@
 </template>
 
 <script setup lang="ts">
+import { ref, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import Select from 'primevue/select'
 import FloatLabel from 'primevue/floatlabel'
 
@@ -22,7 +24,7 @@ const props = defineProps<Props>()
 const route = useRoute()
 const router = useRouter()
 
-model.value = (route.query[props.queryName] as string) || props.defaultValue
+model.value = ((route.query[props.queryName] as string) || props.defaultValue).toLowerCase()
 
 watch(model, (newValue) => {
     const query = { ...route.query }

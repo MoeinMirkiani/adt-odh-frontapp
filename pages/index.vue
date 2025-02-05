@@ -17,8 +17,6 @@ definePageMeta({
     layout: 'filter'
 })
 
-const route = useRoute()
-const flightsData = ref<{ airline: string }[]>([])
 const flights: { airline: string }[] = [
     {
         airline: 'Air Canada'
@@ -37,8 +35,11 @@ const flights: { airline: string }[] = [
     }
 ]
 
+const route = useRoute()
+const flightsData = ref<{ airline: string }[]>([])
+
 const fetchFlights = async (queryParams: any) => {
-    const { data, error } = await useFetch('localhost:8080/flight', {
+    const { data, error } = await useFetch('http://localhost:8080/flight', {
         params: queryParams
     })
 

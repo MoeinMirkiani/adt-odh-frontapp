@@ -7,25 +7,25 @@
                 v-model="flightType"
                 :options="flightTypes"
                 label="Flight Type"
-                query-name="flight_type"
-                default-value="All"
+                query-name="flight"
+                default-value="all"
             />
 
             <SelectFilter
                 v-model="ticketType"
                 :options="ticketTypes"
                 label="Ticket Type"
-                query-name="ticket_type"
-                default-value="All"
+                query-name="ticket"
+                default-value="all"
             />
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-const flightTypes: string[] = ['All', 'Arrival', 'Departure']
-const flightType = ref<string>('All')
+const flightTypes: string[] = ['all', 'arrival', 'departure']
+const flightType = ref<string>('all')
 
-const ticketTypes: string[] = ['All', 'Basic', 'Light', 'Plus', 'Go']
-const ticketType = ref<string>('All')
+const ticketTypes: string[] = ['all', 'basic', 'light', 'plus', 'go']
+const ticketType = ref<string>('all')
 </script>

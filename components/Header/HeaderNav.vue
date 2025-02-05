@@ -29,7 +29,7 @@ const navItems: NavItem[] = [
     },
     {
         name: 'Contact',
-        link: '/contact'
+        link: '/'
     }
 ]
 </script>
